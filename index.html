@@ -75,18 +75,6 @@
       padding: 100px 24px 80px;
       text-align: center;
     }
-    .app-name {
-      display: inline-block;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--accent-dark);
-      background: #f0f7e4;
-      padding: 6px 16px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-    }
     .hero h1 {
       font-size: clamp(36px, 5vw, 56px);
       font-weight: 800;
@@ -126,6 +114,13 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
+    }
+    .features-heading {
+      grid-column: 1 / -1;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
     }
     .feature-card {
       background: var(--card-bg);
@@ -273,6 +268,7 @@
       .hero { padding: 64px 24px 48px; }
       .features { padding: 0 24px 64px; }
       .contact { padding: 0 24px 64px; }
+      .features-heading { text-align: center; }
       footer { flex-direction: column; align-items: flex-start; }
     }
   </style>
@@ -290,7 +286,6 @@
   </nav>
 
   <section class="hero">
-    <p class="app-name">Skue: Bulk Order Form</p>
     <h1>Fast ordering,<br>built for Shopify</h1>
     <p>A spreadsheet-style order form for B2B wholesale and retail storefronts. Give dealers, logged-in customers, or any shopper a faster way to buy — on Shopify Plus, Advanced, and Basic.</p>
     <a href="https://apps.shopify.com" class="hero-cta">
@@ -300,6 +295,7 @@
   </section>
 
   <section class="features">
+    <h2 class="features-heading">Skue: Bulk Order Form App Features</h2>
     <div class="feature-card">
       <div class="feature-icon">
         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
