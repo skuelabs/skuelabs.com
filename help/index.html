@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Center — Skue: Bulk Order Form</title>
+  <meta name="description" content="Complete documentation for the Skue: Bulk Order Form Shopify app. Learn how to set up collections, templates, delivery windows, profiles, and more.">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #fafafa;
+      --text: #1a1a1a;
+      --muted: #666;
+      --accent: #b5d43b;
+      --accent-hover: #9fba2f;
+      --accent-dark: #8aa328;
+      --card-bg: #fff;
+      --border: #e5e5e5;
+      --radius: 12px;
+      --code-bg: #f5f5f5;
+      --sidebar-width: 240px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Nav ──────────────────────────────────────────────────── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px 24px 0;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+    .logo-text {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .logo-text span { color: var(--accent-dark); }
+    .nav-links { display: flex; gap: 24px; }
+    nav a.nav-link {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    nav a.nav-link:hover { color: var(--text); }
+
+    /* ── Hero ─────────────────────────────────────────────────── */
+    .hero {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 64px 24px 48px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* ── Layout ───────────────────────────────────────────────── */
+    .docs-layout {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      display: flex;
+      gap: 48px;
+    }
+
+    /* ── Sidebar ──────────────────────────────────────────────── */
+    .sidebar {
+      width: var(--sidebar-width);
+      flex-shrink: 0;
+      position: sticky;
+      top: 24px;
+      align-self: flex-start;
+      max-height: calc(100vh - 48px);
+      overflow-y: auto;
+    }
+    .sidebar-group {
+      margin-bottom: 24px;
+    }
+    .sidebar-group-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .sidebar a {
+      display: block;
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 4px 0;
+      transition: color 0.15s;
+    }
+    .sidebar a:hover { color: var(--text); }
+
+    /* ── Content ──────────────────────────────────────────────── */
+    .content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Sections */
+    .doc-section {
+      margin-bottom: 56px;
+      scroll-margin-top: 24px;
+    }
+    .doc-section h2 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--accent);
+    }
+    .doc-section h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 32px;
+      margin-bottom: 8px;
+    }
+    .doc-section h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-top: 24px;
+      margin-bottom: 6px;
+    }
+    .doc-section p {
+      font-size: 15px;
+      color: #333;
+      margin-bottom: 12px;
+    }
+    .doc-section ul, .doc-section ol {
+      font-size: 15px;
+      color: #333;
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    .doc-section li {
+      margin-bottom: 6px;
+    }
+    .doc-section strong {
+      font-weight: 600;
+    }
+
+    /* Steps */
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      padding-left: 0;
+    }
+    .steps li {
+      counter-increment: step;
+      position: relative;
+      padding-left: 40px;
+      margin-bottom: 16px;
+    }
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 1px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Callout boxes */
+    .callout {
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .callout-info {
+      background: #eef6ff;
+      border-left: 4px solid #3b82f6;
+    }
+    .callout-tip {
+      background: #f0f7e4;
+      border-left: 4px solid var(--accent-dark);
+    }
+    .callout-warning {
+      background: #fef3cd;
+      border-left: 4px solid #f59e0b;
+    }
+    .callout strong {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    /* Inline code */
+    code {
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+      font-size: 13px;
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #c7254e;
+    }
+
+    /* Tables */
+    .doc-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    .doc-table th {
+      text-align: left;
+      padding: 10px 12px;
+      background: var(--code-bg);
+      font-weight: 600;
+      border-bottom: 2px solid var(--border);
+    }
+    .doc-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .doc-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Screenshot placeholders */
+    .screenshot {
+      background: var(--code-bg);
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .screenshot img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    /* Feature badges */
+    .plan-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 8px;
+      border-radius: 4px;
+      vertical-align: middle;
+    }
+    .plan-free { background: #e5e5e5; color: #666; }
+    .plan-essentials { background: #dbeafe; color: #1d4ed8; }
+    .plan-growth { background: #f0f7e4; color: var(--accent-dark); }
+    .plan-scale { background: #fce7f3; color: #be185d; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    footer .copy {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    footer .footer-links { display: flex; gap: 24px; }
+    footer .footer-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer .footer-links a:hover { color: var(--text); }
+
+    /* ── Mobile ───────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .docs-layout { flex-direction: column; gap: 0; }
+      .sidebar {
+        position: static;
+        width: 100%;
+        max-height: none;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 24px;
+        margin-bottom: 32px;
+      }
+      .sidebar-group { margin-bottom: 16px; }
+      footer { flex-direction: column; align-items: center; }
+    }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ──────────────────────────────────────────────────── -->
+  <nav>
+    <a href="/" class="logo">
+      <img src="/skue-icon.png" alt="Skue" width="36" height="36">
+      <span class="logo-text">Skue<span>Labs</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/help" class="nav-link" style="color:var(--text);font-weight:600">Help Center</a>
+      <a href="/#contact" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ── Hero ─────────────────────────────────────────────────── -->
+  <section class="hero">
+    <h1>Help Center</h1>
+    <p>Everything you need to set up and manage your Skue: Bulk Order Form. Can't find what you need? <a href="mailto:support@skuelabs.com" style="color:var(--accent-dark)">Email us</a>.</p>
+  </section>
+
+  <!-- ── Docs Layout ──────────────────────────────────────────── -->
+  <div class="docs-layout">
+
+    <!-- ── Sidebar ────────────────────────────────────────────── -->
+    <aside class="sidebar">
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">Getting Started</div>
+        <a href="#installation">Installation</a>
+        <a href="#one-click-deploy">One-click deploy</a>
+        <a href="#store-navigation">Adding to store navigation</a>
+      </div>
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">Configuration</div>
+        <a href="#collections">Collections &amp; Layout</a>
+        <a href="#columns">Column configuration</a>
+        <a href="#features">Feature toggles</a>
+        <a href="#settings">Settings &amp; Appearance</a>
+      </div>
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">Features</div>
+        <a href="#templates">Starter Orders</a>
+        <a href="#delivery-windows">Delivery Windows</a>
+        <a href="#profiles">Profiles</a>
+        <a href="#help-content">Help Content</a>
+        <a href="#analytics">Order Analytics</a>
+      </div>
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">Storefront</div>
+        <a href="#order-form">The Order Form</a>
+        <a href="#review-bar">Review Bar</a>
+        <a href="#search">Search &amp; QuickView</a>
+        <a href="#csv-upload">CSV Upload</a>
+      </div>
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">Billing</div>
+        <a href="#plans">Plans &amp; Pricing</a>
+        <a href="#upgrading">Upgrading</a>
+      </div>
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">Support</div>
+        <a href="#faq">FAQ</a>
+        <a href="#troubleshooting">Troubleshooting</a>
+        <a href="#contact-support">Contact Support</a>
+      </div>
+    </aside>
+
+    <!-- ── Content ────────────────────────────────────────────── -->
+    <main class="content">
+
+      <!-- ════════════════════════════════════════════════════════
+           GETTING STARTED
+           ════════════════════════════════════════════════════════ -->
+
+      <section class="doc-section" id="installation">
+        <h2>Installation</h2>
+        <p>Skue: Bulk Order Form installs like any Shopify app. After installing from the Shopify App Store, open the app from your Shopify admin sidebar under <strong>Apps &gt; Skue: Bulk Order Form</strong>.</p>
+        <p>The first thing you'll see is the <strong>Dashboard</strong> — your home base for deploying the order form, tracking setup progress, and managing your account.</p>
+
+        <div class="callout callout-info">
+          <strong>Shopify compatibility</strong>
+          Skue works on all Shopify plans: Basic, Shopify, Advanced, and Plus. B2B-specific features like customer-gated access work best on Shopify Plus with B2B catalogs.
+        </div>
+      </section>
+
+      <section class="doc-section" id="one-click-deploy">
+        <h2>One-click deploy</h2>
+        <p>The fastest way to get your order form live is the one-click deploy on the Dashboard. It handles three things automatically:</p>
+        <ol class="steps">
+          <li><strong>Creates the page</strong> — A new page at <code>/pages/order-form</code> is added to your store.</li>
+          <li><strong>Adds the app block</strong> — The Skue order form block is inserted into a dedicated theme template (<code>page.order-form.json</code>).</li>
+          <li><strong>Syncs settings</strong> — Your collections, columns, and layout preferences are pushed to the storefront as metafields.</li>
+        </ol>
+
+        <p>Click <strong>Create Order Form</strong> on the Dashboard and the deploy runs in a few seconds. Once complete, you'll see a green success banner with a link to view the live order form.</p>
+
+        <div class="callout callout-tip">
+          <strong>Already deployed?</strong>
+          If you make changes to your settings later, hit <strong>Sync to Storefront</strong> on the Dashboard to push updates. Every settings page also has a Save button that syncs automatically.
+        </div>
+      </section>
+
+      <section class="doc-section" id="store-navigation">
+        <h2>Adding to store navigation</h2>
+        <p>After deploying, add the order form to your store's navigation so customers can find it:</p>
+        <ol class="steps">
+          <li>In Shopify admin, go to <strong>Online Store &gt; Navigation</strong>.</li>
+          <li>Click on your main menu (usually "Main menu").</li>
+          <li>Click <strong>Add menu item</strong>.</li>
+          <li>Set the name (e.g., "Order Form") and link it to <strong>Pages &gt; Order Form</strong>.</li>
+          <li>Click <strong>Save</strong>.</li>
+        </ol>
+        <p>Back on the Skue Dashboard, click <strong>Mark as done</strong> next to the "Add to store navigation" step to check it off your setup guide.</p>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════
+           CONFIGURATION
+           ════════════════════════════════════════════════════════ -->
+
+      <section class="doc-section" id="collections">
+        <h2>Collections &amp; Layout</h2>
+        <p>The <strong>Collections &amp; Layout</strong> page controls which products appear on your order form and how they're displayed. Navigate to it via the sidebar or use the arrow navigation at the top of any page.</p>
+
+        <h3>Adding collections</h3>
+        <p>Click <strong>Add collection</strong> to open Shopify's collection picker. Select one or more collections — these become the product groups on your order form. Each collection appears as a separate section with its own header.</p>
+
+        <h3>Reordering collections</h3>
+        <p>Drag and drop collection rows to change the order they appear on the storefront. The first collection in the list appears at the top of the order form.</p>
+
+        <h3>Removing collections</h3>
+        <p>Click the <strong>&times;</strong> button on any collection row to remove it. Don't forget to save your changes.</p>
+
+        <div class="callout callout-info">
+          <strong>Plan limits</strong>
+          The number of collections you can add depends on your plan: Free allows 1 collection, Essentials allows 5, Growth allows 20, and Scale is unlimited.
+        </div>
+      </section>
+
+      <section class="doc-section" id="columns">
+        <h2>Column configuration</h2>
+        <p>Below the collection picker, you'll find the <strong>Column toggles</strong> section. These control which data columns appear on the order form table:</p>
+
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Column</th>
+              <th>Description</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Image</strong></td>
+              <td>Product thumbnail image</td>
+              <td>On</td>
+            </tr>
+            <tr>
+              <td><strong>SKU</strong></td>
+              <td>Product SKU or variant SKU</td>
+              <td>On</td>
+            </tr>
+            <tr>
+              <td><strong>MAP (Retail price)</strong></td>
+              <td>The compare-at price or retail MSRP</td>
+              <td>On</td>
+            </tr>
+            <tr>
+              <td><strong>B2B Price</strong></td>
+              <td>The actual selling price for the customer</td>
+              <td>On</td>
+            </tr>
+            <tr>
+              <td><strong>Margin</strong></td>
+              <td>Calculated profit margin between MAP and B2B price</td>
+              <td>On</td>
+            </tr>
+            <tr>
+              <td><strong>Stock</strong></td>
+              <td>Available inventory quantity</td>
+              <td>On</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Toggle any column off to hide it from the storefront. This is useful if you don't want to expose pricing details or inventory levels to certain customers.</p>
+      </section>
+
+      <section class="doc-section" id="features">
+        <h2>Feature toggles</h2>
+        <p>The Collections &amp; Layout page also includes toggles for key storefront features:</p>
+
+        <h4>Search</h4>
+        <p>Enables the search bar at the top of the order form. Customers can type a product name or SKU to instantly filter the product list.</p>
+
+        <h4>Delivery Windows</h4>
+        <p>Shows the delivery window selector on the order form toolbar. When enabled, customers must choose a delivery date before adding items to cart. Requires at least one delivery schedule to be configured.</p>
+
+        <h4>Starter Orders</h4>
+        <p>Adds the "Starter Orders" button to the toolbar. Customers can load a pre-built template to quickly populate the order form with suggested quantities.</p>
+
+        <h4>CSV Upload</h4>
+        <p>Adds an "Upload CSV" button to the order form. Customers can upload a CSV file with SKUs and quantities to bulk-fill the form. <span class="plan-badge plan-essentials">Essentials+</span></p>
+
+        <h4>Help Content</h4>
+        <p>Displays a help button (?) on the order form that opens a panel with custom guidance you've written. <span class="plan-badge plan-essentials">Essentials+</span></p>
+
+        <h4>QuickView</h4>
+        <p>Enables product quick-view popovers. When a customer clicks a product name, a panel slides open showing the product description, images, and any custom metafield data.</p>
+
+        <h3>Product layout</h3>
+        <p>Choose how products display within each collection:</p>
+        <ul>
+          <li><strong>Table (default)</strong> — Spreadsheet-style rows with columns for each data field. Best for catalogs with many SKUs.</li>
+          <li><strong>Grid</strong> — Card-based layout showing product images. Better for visual catalogs with fewer products per collection.</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="settings">
+        <h2>Settings &amp; Appearance</h2>
+        <p>The <strong>Settings</strong> page controls global options for your order form.</p>
+
+        <h3>Page title &amp; labels</h3>
+        <p>Customize the heading that appears at the top of the order form (default: "ORDER FORM") and the label on the add-to-cart button (default: "Update Cart").</p>
+
+        <h3>Visibility &amp; access</h3>
+        <p>Control who can see the order form:</p>
+        <ul>
+          <li><strong>Everyone</strong> — Any visitor can access the order form.</li>
+          <li><strong>Logged-in customers only</strong> — Requires a Shopify customer account to view.</li>
+          <li><strong>B2B only</strong> — Only Shopify B2B company contacts can access the form (Shopify Plus required).</li>
+        </ul>
+        <p>When the form is restricted, unauthorized visitors see a customizable lock-screen message instead.</p>
+
+        <h3>PDP Pricing <span class="plan-badge plan-growth">Growth+</span></h3>
+        <p>Enable the product detail page (PDP) pricing block to show MAP, B2B price, and margin calculations on individual product pages throughout your store.</p>
+
+        <h3>Appearance <span class="plan-badge plan-essentials">Essentials+</span></h3>
+        <p>Customize the visual appearance of your order form to match your brand:</p>
+        <ul>
+          <li><strong>Primary color</strong> — Used for buttons, the review bar, and collection headers.</li>
+          <li><strong>Header text color</strong> — Text color on collection headers and the review bar.</li>
+          <li><strong>Accent color</strong> — Used for quantity controls and interactive elements.</li>
+          <li><strong>Background color</strong> — The page background behind the order form.</li>
+        </ul>
+        <p>Changes preview in real-time on the storefront after saving.</p>
+
+        <div class="callout callout-tip">
+          <strong>Happy with the defaults?</strong>
+          The default dark theme works well with most Shopify stores. If you're on the Free plan or just prefer the defaults, mark "Customize appearance" as done in the setup guide on the Dashboard.
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════
+           FEATURES
+           ════════════════════════════════════════════════════════ -->
+
+      <section class="doc-section" id="templates">
+        <h2>Starter Orders (Templates)</h2>
+        <p>Starter orders are pre-built order templates that help customers get started quickly. Instead of browsing your entire catalog, a new customer can load a template to pre-fill the order form with your recommended products and quantities.</p>
+
+        <h3>Creating a template</h3>
+        <ol class="steps">
+          <li>Navigate to <strong>Starter Orders</strong> in the sidebar.</li>
+          <li>Click <strong>New template</strong>.</li>
+          <li>Give it a name (e.g., "Spring Essentials" or "New Dealer Starter Pack").</li>
+          <li>Add products by searching or browsing. Set the suggested quantity for each item.</li>
+          <li>Click <strong>Save</strong>.</li>
+        </ol>
+
+        <h3>How customers use templates</h3>
+        <p>On the storefront, customers click the <strong>Starter Orders</strong> button in the toolbar. A modal appears listing all available templates. When they select one, the order form is pre-populated with the template's products and quantities. Customers can then adjust quantities before adding to cart.</p>
+
+        <div class="callout callout-info">
+          <strong>Plan limits</strong>
+          Free: 1 template. Essentials: 3 templates. Growth and Scale: Unlimited.
+        </div>
+      </section>
+
+      <section class="doc-section" id="delivery-windows">
+        <h2>Delivery Windows</h2>
+        <p>Delivery windows let customers choose when their order will arrive. This is essential for wholesale businesses with scheduled delivery routes.</p>
+
+        <h3>Creating a schedule</h3>
+        <ol class="steps">
+          <li>Navigate to <strong>Delivery Windows</strong> in the sidebar.</li>
+          <li>Click <strong>Recurring</strong> or <strong>One-off</strong>.</li>
+          <li>For recurring: choose the day(s) of the week, set a lead time (minimum days in advance), and optionally set a cutoff time.</li>
+          <li>For one-off: pick a specific date range.</li>
+          <li>Click <strong>Save</strong>.</li>
+        </ol>
+
+        <h3>How it works on the storefront</h3>
+        <p>When delivery windows are enabled, a <strong>Delivery Window</strong> button appears in the order form toolbar. Customers must select a delivery date before they can add items to their cart. The selected date is attached to the order as a note attribute.</p>
+
+        <h4>Lead time</h4>
+        <p>The lead time setting (in days) determines how far in advance customers must order. For example, a 2-day lead time with a Wednesday delivery means customers must place orders by Monday.</p>
+
+        <h4>Cutoff time</h4>
+        <p>Set a daily cutoff time (e.g., 2:00 PM). Orders placed after the cutoff count toward the next available window.</p>
+
+        <div class="callout callout-info">
+          <strong>Plan limits</strong>
+          Free: Not available. Essentials: 3 schedules. Growth and Scale: Unlimited.
+        </div>
+      </section>
+
+      <section class="doc-section" id="profiles">
+        <h2>Profiles</h2>
+        <p>Profiles let you create multiple versions of the order form, each with its own collections, layout, and delivery options. This is useful when you serve different customer segments.</p>
+
+        <h3>Use cases</h3>
+        <ul>
+          <li><strong>B2B vs. retail</strong> — Show wholesale pricing and bulk SKUs to B2B contacts, and a curated retail selection to everyone else.</li>
+          <li><strong>Regional catalogs</strong> — Different product lines for different regions or markets.</li>
+          <li><strong>Seasonal rotations</strong> — Swap collections in and out by switching which profile is active.</li>
+        </ul>
+
+        <h3>Creating a profile</h3>
+        <ol class="steps">
+          <li>Navigate to <strong>Profiles</strong> in the sidebar.</li>
+          <li>Click <strong>Create profile</strong>.</li>
+          <li>Give it a name and description.</li>
+          <li>Assign collections, choose layout options, and configure delivery windows.</li>
+          <li>Click <strong>Save</strong>.</li>
+        </ol>
+
+        <h3>Default profile</h3>
+        <p>Every store has one default profile. This is what visitors see when no other profile is assigned. You can't delete the default profile, but you can edit it freely.</p>
+
+        <div class="callout callout-info">
+          <strong>Plan limits</strong>
+          Free: No additional profiles (default only). Essentials: 1 profile. Growth: 5 profiles. Scale: Unlimited.
+        </div>
+      </section>
+
+      <section class="doc-section" id="help-content">
+        <h2>Help Content <span class="plan-badge plan-essentials">Essentials+</span></h2>
+        <p>Add custom help content that appears when customers click the <strong>?</strong> button on the order form. Use this to explain your ordering process, delivery schedule, or return policy.</p>
+
+        <h3>Item types</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Appearance</th>
+              <th>Best for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Step</strong></td>
+              <td>Numbered instruction with a title</td>
+              <td>How-to guides, ordering instructions</td>
+            </tr>
+            <tr>
+              <td><strong>Warning</strong></td>
+              <td>Yellow highlighted callout</td>
+              <td>Important policies, cutoff reminders</td>
+            </tr>
+            <tr>
+              <td><strong>Info</strong></td>
+              <td>Blue informational callout</td>
+              <td>General tips, contact information</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Managing items</h3>
+        <p>On the <strong>Help Content</strong> page, you can add, remove, reorder (drag and drop), and edit items. Click <strong>Reset to defaults</strong> to restore the built-in example content. Changes are saved when you click <strong>Save</strong>.</p>
+      </section>
+
+      <section class="doc-section" id="analytics">
+        <h2>Order Analytics <span class="plan-badge plan-growth">Growth+</span></h2>
+        <p>The Dashboard shows a 90-day summary of orders placed through your store:</p>
+        <ul>
+          <li><strong>Total orders</strong> — Number of orders in the last 90 days.</li>
+          <li><strong>Average order value</strong> — Mean revenue per order.</li>
+          <li><strong>Orders per week</strong> — Average weekly order volume.</li>
+          <li><strong>Most ordered products</strong> — Top 5 products by quantity ordered.</li>
+        </ul>
+        <p>Analytics update every time you visit the Dashboard.</p>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════
+           STOREFRONT
+           ════════════════════════════════════════════════════════ -->
+
+      <section class="doc-section" id="order-form">
+        <h2>The Order Form</h2>
+        <p>The storefront order form is the customer-facing page at <code>/pages/order-form</code>. It displays your products in a spreadsheet-style table organized by collection.</p>
+
+        <h3>Layout</h3>
+        <p>From top to bottom, the order form includes:</p>
+        <ol>
+          <li><strong>Review bar</strong> — Sticky bar at the top showing item count, retail total, profit, cart total, and action buttons (Clear, Update Cart, Help).</li>
+          <li><strong>Toolbar</strong> — Search field, delivery window picker, starter orders button, past orders button, and save draft button.</li>
+          <li><strong>Collection sections</strong> — Each collection gets its own header and product table.</li>
+          <li><strong>Product rows</strong> — Each product shows its image, name, price columns, SKU, stock, and quantity controls.</li>
+        </ol>
+
+        <h3>Adding to cart</h3>
+        <p>Customers adjust quantities using the <strong>+</strong> and <strong>&minus;</strong> buttons or by typing directly into the quantity field. When ready, clicking <strong>Update Cart</strong> adds all items with quantity &gt; 0 to the Shopify cart.</p>
+
+        <h3>Variants</h3>
+        <p>Products with multiple variants show a <strong>Choose Variants</strong> button instead of a simple quantity input. Clicking it opens a modal where customers can set quantities for each variant (size, color, etc.) individually.</p>
+      </section>
+
+      <section class="doc-section" id="review-bar">
+        <h2>Review Bar</h2>
+        <p>The review bar is the dark sticky header at the top of the order form. It provides a real-time summary as customers fill in quantities:</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>What it shows</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Items</strong></td>
+              <td>Total number of line items with quantity &gt; 0</td>
+            </tr>
+            <tr>
+              <td><strong>Retail</strong></td>
+              <td>Sum of MAP (retail) prices &times; quantities</td>
+            </tr>
+            <tr>
+              <td><strong>Profit</strong></td>
+              <td>Difference between retail and B2B totals (shown in green)</td>
+            </tr>
+            <tr>
+              <td><strong>Total</strong></td>
+              <td>Sum of B2B prices &times; quantities (the actual cart total)</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>The <strong>Clear</strong> button resets all quantities to zero. The <strong>Update Cart</strong> button submits the order to the Shopify cart.</p>
+      </section>
+
+      <section class="doc-section" id="search">
+        <h2>Search &amp; QuickView</h2>
+
+        <h3>Search</h3>
+        <p>The search bar at the top of the order form filters products in real-time as the customer types. It searches across:</p>
+        <ul>
+          <li>Product title</li>
+          <li>SKU</li>
+          <li>Variant title</li>
+        </ul>
+        <p>Search is enabled by default but can be toggled off in Collections &amp; Layout.</p>
+
+        <h3>QuickView</h3>
+        <p>When a customer clicks a product name, a QuickView panel slides open showing:</p>
+        <ul>
+          <li>Full product description</li>
+          <li>Product images (gallery)</li>
+          <li>Variant details</li>
+          <li>Custom metafields (if configured, <span class="plan-badge plan-growth">Growth+</span>)</li>
+        </ul>
+        <p>QuickView lets customers get product details without leaving the order form.</p>
+      </section>
+
+      <section class="doc-section" id="csv-upload">
+        <h2>CSV Upload <span class="plan-badge plan-essentials">Essentials+</span></h2>
+        <p>Customers who manage their orders in spreadsheets can upload a CSV file to bulk-fill the order form.</p>
+
+        <h3>CSV format</h3>
+        <p>The CSV file should have two columns:</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Column</th>
+              <th>Description</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>sku</code></td>
+              <td>Product or variant SKU</td>
+              <td>ACME-001-BLK-L</td>
+            </tr>
+            <tr>
+              <td><code>quantity</code></td>
+              <td>Desired quantity</td>
+              <td>12</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>After uploading, the order form matches each SKU to the corresponding product and pre-fills the quantity. Any unmatched SKUs are reported in a summary dialog.</p>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════
+           BILLING
+           ════════════════════════════════════════════════════════ -->
+
+      <section class="doc-section" id="plans">
+        <h2>Plans &amp; Pricing</h2>
+        <p>Skue offers four plans to fit businesses of every size:</p>
+
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th><span class="plan-badge plan-free">Free</span></th>
+              <th><span class="plan-badge plan-essentials">Essentials</span><br>$19/mo</th>
+              <th><span class="plan-badge plan-growth">Growth</span><br>$49/mo</th>
+              <th><span class="plan-badge plan-scale">Scale</span><br>$99/mo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Products</td>
+              <td>50</td>
+              <td>200</td>
+              <td>2,000</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Collections</td>
+              <td>1</td>
+              <td>5</td>
+              <td>20</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Starter order templates</td>
+              <td>1</td>
+              <td>3</td>
+              <td>Unlimited</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Order form profiles</td>
+              <td>&mdash;</td>
+              <td>1</td>
+              <td>5</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Delivery schedules</td>
+              <td>&mdash;</td>
+              <td>3</td>
+              <td>Unlimited</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Branding</td>
+              <td>&mdash;</td>
+              <td>Full</td>
+              <td>Full</td>
+              <td>Full</td>
+            </tr>
+            <tr>
+              <td>CSV upload</td>
+              <td>&mdash;</td>
+              <td>Included</td>
+              <td>Included</td>
+              <td>Included</td>
+            </tr>
+            <tr>
+              <td>Help content</td>
+              <td>&mdash;</td>
+              <td>Included</td>
+              <td>Included</td>
+              <td>Included</td>
+            </tr>
+            <tr>
+              <td>PDP pricing</td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+              <td>Included</td>
+              <td>Included</td>
+            </tr>
+            <tr>
+              <td>Custom metafields</td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+              <td>3 fields</td>
+              <td>3 fields</td>
+            </tr>
+            <tr>
+              <td>Order analytics</td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+              <td>Included</td>
+              <td>Included</td>
+            </tr>
+            <tr>
+              <td>Watermark</td>
+              <td>Shown</td>
+              <td>Removed</td>
+              <td>Removed</td>
+              <td>Removed</td>
+            </tr>
+            <tr>
+              <td>Support</td>
+              <td>Community</td>
+              <td>Standard</td>
+              <td>Standard</td>
+              <td>Priority</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="doc-section" id="upgrading">
+        <h2>Upgrading &amp; Downgrading</h2>
+
+        <h3>How to upgrade</h3>
+        <ol class="steps">
+          <li>Navigate to <strong>Plan &amp; Billing</strong> in the sidebar.</li>
+          <li>Click <strong>Upgrade to [Plan]</strong> on your desired plan.</li>
+          <li>You'll be redirected to Shopify's confirmation page to approve the subscription charge.</li>
+          <li>After approving, you're immediately on the new plan with all features unlocked.</li>
+        </ol>
+
+        <h3>How to downgrade</h3>
+        <p>On the Plan &amp; Billing page, click <strong>Cancel subscription</strong> at the bottom of the current plan card. You'll be moved to the Free plan immediately. Your settings are preserved, but features beyond Free plan limits will be locked until you upgrade again.</p>
+
+        <div class="callout callout-warning">
+          <strong>Downgrade impact</strong>
+          When downgrading, any resources that exceed the lower plan's limits (extra collections, templates, profiles) won't be deleted — they'll just be inaccessible until you upgrade. No data is lost.
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════
+           SUPPORT
+           ════════════════════════════════════════════════════════ -->
+
+      <section class="doc-section" id="faq">
+        <h2>FAQ</h2>
+
+        <h3>Does Skue work with all Shopify themes?</h3>
+        <p>Yes. Skue uses Shopify's app block system, which is compatible with all Online Store 2.0 themes. The order form renders on its own dedicated page template, so it doesn't interfere with your theme's design.</p>
+
+        <h3>Can customers reorder from past orders?</h3>
+        <p>Yes. The <strong>Select Past Order</strong> button on the storefront lets customers load a previous order to pre-fill the form with their last quantities. This is great for recurring B2B customers.</p>
+
+        <h3>Does Skue modify my theme files?</h3>
+        <p>Skue creates one theme template file (<code>templates/page.order-form.json</code>) during the one-click deploy. It does not modify any existing theme files. Uninstalling the app removes the template automatically.</p>
+
+        <h3>How do I show different prices to B2B and retail customers?</h3>
+        <p>Skue reads prices from Shopify's native B2B catalog system. If you have B2B price lists set up in Shopify (Plus required), B2B customers automatically see their contracted prices on the order form. Retail customers see standard prices.</p>
+
+        <h3>Can I use Skue without B2B catalogs?</h3>
+        <p>Absolutely. Skue works great for any store that wants a fast, spreadsheet-style ordering experience. You don't need Shopify Plus or B2B catalogs — the order form works with standard product prices on any Shopify plan.</p>
+
+        <h3>Does Skue support multiple currencies?</h3>
+        <p>Skue uses whatever currency and pricing your Shopify store is configured with. If you use Shopify Markets or multi-currency, the order form reflects the customer's local pricing.</p>
+
+        <h3>How does the "Save Draft" feature work?</h3>
+        <p>Customers can click <strong>Save Draft</strong> to save their current quantities locally in their browser. When they return to the order form later, they can reload the draft. Drafts are stored in the browser's local storage, not on the server.</p>
+
+        <h3>What happens to my data if I uninstall the app?</h3>
+        <p>All app data (collections, templates, profiles, schedules, branding) is deleted when you uninstall the app, in compliance with Shopify's data protection requirements. The order form page and theme template are also removed.</p>
+      </section>
+
+      <section class="doc-section" id="troubleshooting">
+        <h2>Troubleshooting</h2>
+
+        <h3>Order form page is blank</h3>
+        <ul>
+          <li><strong>Check if deployed:</strong> Go to the Dashboard and confirm the green "Order form is live" message appears.</li>
+          <li><strong>Sync settings:</strong> Click <strong>Sync to Storefront</strong> on the Dashboard to push the latest configuration.</li>
+          <li><strong>Check collections:</strong> Make sure at least one collection is added in Collections &amp; Layout.</li>
+          <li><strong>Check theme template:</strong> In Shopify admin, go to <strong>Online Store &gt; Pages</strong>, find the "Order Form" page, and make sure its template is set to "order-form".</li>
+        </ul>
+
+        <h3>Products not showing up</h3>
+        <ul>
+          <li><strong>Product availability:</strong> Products must be set to "Active" in Shopify and available to the Online Store sales channel.</li>
+          <li><strong>Collection membership:</strong> Verify the products are in the collections you've added to Skue.</li>
+          <li><strong>Sync:</strong> After adding new products to a collection, hit <strong>Sync to Storefront</strong> or save your settings to update.</li>
+        </ul>
+
+        <h3>Prices showing $0.00 or incorrect values</h3>
+        <ul>
+          <li><strong>B2B pricing:</strong> If using Shopify B2B, make sure the customer is logged in and has an active B2B company association with a price list.</li>
+          <li><strong>Compare-at price:</strong> The MAP column uses the compare-at price. If it's not set on a product, the MAP column will show the regular price.</li>
+        </ul>
+
+        <h3>"Sync to Storefront" not working</h3>
+        <ul>
+          <li><strong>Page exists:</strong> Confirm the order form page exists at <code>/pages/order-form</code>.</li>
+          <li><strong>Try redeploy:</strong> If persistent, run the one-click deploy again from the Dashboard — it's safe to run multiple times.</li>
+        </ul>
+
+        <h3>Delivery window not appearing</h3>
+        <ul>
+          <li><strong>Toggle on:</strong> Check that "Delivery Windows" is enabled in Collections &amp; Layout feature toggles.</li>
+          <li><strong>Schedule exists:</strong> You need at least one active delivery schedule configured in the Delivery Windows page.</li>
+          <li><strong>Lead time:</strong> If all upcoming windows are past the cutoff, no windows will be available to select.</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="contact-support">
+        <h2>Contact Support</h2>
+        <p>Can't find the answer you need? We're here to help.</p>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:support@skuelabs.com" style="color:var(--accent-dark)">support@skuelabs.com</a></li>
+          <li><strong>Feature requests:</strong> <a href="mailto:support@skuelabs.com?subject=Feature%20Request" style="color:var(--accent-dark)">Send a feature request</a></li>
+        </ul>
+        <p>We typically respond within 24 hours on business days. Priority support customers on the Scale plan receive expedited responses.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ── Footer ───────────────────────────────────────────────── -->
+  <footer>
+    <span class="copy">&copy; <script>document.write(new Date().getFullYear())</script> Skue Labs LLC. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </footer>
+
+</body>
+</html>
