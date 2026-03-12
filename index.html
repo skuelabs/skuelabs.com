@@ -139,6 +139,10 @@
     .hero-password {
       font-size: 14px;
       color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
     }
     .hero-password code {
       background: #eee;
@@ -147,6 +151,19 @@
       font-size: 14px;
       color: var(--text);
       font-weight: 600;
+    }
+    .copy-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--muted);
+      padding: 2px;
+      display: inline-flex;
+      align-items: center;
+      transition: color 0.2s;
+    }
+    .copy-btn:hover {
+      color: var(--text);
     }
 
     /* Features */
@@ -343,7 +360,7 @@
     <h1>Fast ordering,<br>built for Shopify</h1>
     <p>A spreadsheet-style order form for B2B wholesale and retail storefronts. Give dealers, logged-in customers, or any shopper a faster way to buy — on Shopify Plus, Advanced, and Basic.</p>
     <div class="hero-buttons">
-      <a href="https://demo.skuelabs.com/pages" class="hero-demo">
+      <a href="https://demo.skuelabs.com/pages/order-form" class="hero-demo">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
         View Demo Site
       </a>
@@ -352,7 +369,7 @@
         View on Shopify App Store
       </a>
     </div>
-    <p class="hero-password">Demo store password: <code>skuelabs</code></p>
+    <p class="hero-password">Demo store password: <code>skuelabs</code><button class="copy-btn" onclick="navigator.clipboard.writeText('skuelabs').then(()=>{this.querySelector('.copy-default').style.display='none';this.querySelector('.copy-done').style.display='block';setTimeout(()=>{this.querySelector('.copy-default').style.display='block';this.querySelector('.copy-done').style.display='none'},1500)})" title="Copy password"><svg class="copy-default" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg><svg class="copy-done" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><polyline points="20 6 9 17 4 12"/></svg></button></p>
   </section>
 
   <section class="features">
